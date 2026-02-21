@@ -1,0 +1,39 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build MedAssistProApp",
+            "type": "process",
+            "command": "javac",
+            "args": [
+                "--module-path",
+                "lib/openjfx-21/lib",
+                "--add-modules",
+                "javafx.controls,javafx.fxml",
+                "-cp",
+                "\"C:/sqlite/sqlite-jdbc-3.45.2.0.jar;lib\\pdfbox-app-2.0.29.jar\"",
+                "src/MedAssistProApp.java",
+                "-d",
+                "bin"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Run MedAssistProApp",
+            "type": "process",
+            "command": "java",
+            "args": [
+                "--module-path",
+                "lib/openjfx-21/lib",
+                "--add-modules",
+                "javafx.controls,javafx.fxml",
+                "-cp",
+                "\"bin;C:/sqlite/sqlite-jdbc-3.45.2.0.jar;lib\\pdfbox-app-2.0.29.jar\"",
+                "MedAssistProApp"
+            ]
+        }
+    ]
+}
